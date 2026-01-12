@@ -1,0 +1,610 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrreprt}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Sociology of Water Management},
+  pdfauthor={A. Buday},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Sociology of Water Management}
+\author{A. Buday}
+\date{2025-12-30}
+\begin{document}
+\maketitle
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+
+\bookmarksetup{startatroot}
+
+\chapter{Sociology of Water
+Management}\label{sociology-of-water-management}
+
+The waters of the Laurentian Great Lakes are a special treasure in a
+thirsty world. More than 30 million people in eight U.S. states and one
+Canadian province rely on this system for drinking water, food
+production, transportation, recreation, and cultural identity, making
+management of this precious resource an inherently collaborative
+endeavor.
+
+In recent years, there has been increasing interest in integrating
+social science with ecological research to develop management approaches
+that account for the human dimensions of natural resource management.
+From fisheries to farming and all things in between, human activities
+shape Great Lakes ecosystems in complex and far-reaching ways.
+
+This chapter examines these dynamics, including legacy pollution from
+industrialization and urbanization in the basin, as well as present-day
+management challenges associated with modern sources of pollution.
+
+\bookmarksetup{startatroot}
+
+\chapter{From Data To Statistics}\label{from-data-to-statistics}
+
+Learning Objectives
+
+\begin{itemize}
+\tightlist
+\item
+  Organize raw data using frequency distributions
+\item
+  Describe the shape, center, and variation of a variable
+\item
+  Explain what descriptive statistics tell us about survey responses
+\end{itemize}
+
+I was a horrible statistics student. I approached the subject with a
+survivor mentality, clawing my way through assignments and exams and
+immediately forgetting all related content due to immense anxiety. I
+took my B in graduate social statistics (basically failing in graduate
+terms) and gladly moved on to complete a qualitative dissertation.
+
+Imagine my surprise when I landed my first job and was immediately asked
+to lead projects requiring survey research. I did what any young
+graduate with a mountain of student loan debt does -- jumped right in!
+
+When I first encountered John Kranzler's (2017) book, \emph{Statistics
+for the Terrified}, I felt seen. Kranzler had a way of describing my
+statistics paralysis in hilarious prose and breaking down basic
+terminology in a way I found accessible -- and even fun. My own take on
+this topic therefore follows his excellent model.
+
+If you are feeling stressed about talking about statistics, I invite you
+to take a moment to watch the short video:
+\href{https://youtu.be/iymgY56mgCo?si=4t7mUiiaIKp-mhCh}{What is
+Statistics Anxiety?}
+
+Stats anxiety is problematic because it blocks us from learning,
+prevents us from asking questions, and generally snowballs into an
+unproductive physical and mental state. Instead of focusing on your
+performance goals and the fear that you won't reach them, try focusing
+on the learning process as we move forward, and acknowledge how
+struggling with new material can contribute to your academic and
+professional growth.
+
+We will ease into our data explorations by reviewing the structure of
+data in raw form and tracing the process of transitioning data from
+unordered numbers to interpretable distributions. This introduction will
+have relevance beyond your West MI Watersheds analysis, laying a
+foundation of data literacy you will build on throughout your
+professional life.
+
+\section{Data Structure}\label{data-structure}
+
+Let's begin our journey into data analytics by clarifying two important
+terms: data and statistics.
+
+In quantitative research, data are pieces of information represented as
+numbers. These numbers may describe things like behaviors, experiences,
+opinions, or characteristics of people. This contrasts with qualitative
+data, which are expressed as text, images, or other non-numeric forms
+(Sheppard, 2020).
+
+Statistics refers to the set of tools we use to organize, summarize, and
+display quantitative data in ways that make patterns easier to see and
+interpret (Kranzler, 2017). We'll begin with the most basic statistical
+task of all: turning raw data into something we can understand.
+
+Before we can describe or analyze data, we need to understand what we
+are actually looking at when we open a dataset in RStudio. At first
+glance, a data file looks like a large grid of numbers that doesn't mean
+very much at all. In reality, data files follow a conventional and
+meaningful structure:
+
+\begin{itemize}
+\tightlist
+\item
+  Each row represents a case. In survey data, each row corresponds to
+  one survey participant.
+\item
+  Each column represents a variable, or a characteristic measured by the
+  survey (such as age, frequency of septic tank pumping, or perceptions
+  of water quality).
+\item
+  Each cell contains a value, which is the recorded response for one
+  person on one variable (Çetinkaya-Rundel \& Hardin, 2024).
+\end{itemize}
+
+Understanding this structure helps you keep track of which information
+lives where in your dataset. If you are interested in how people
+answered a particular survey question, you will look down a column. If
+you want to understand one participant's full set of responses, you will
+look across a row.
+
+However, simply seeing numbers in a dataset does not mean those numbers
+can be analyzed immediately. Raw data often include values that serve
+special purposes, such as indicating a skipped question, a ``don't
+know'' response, or a response that does not apply to a particular
+person (Arthur \& Clark, 2021). These values are part of the dataset's
+structure, but they require interpretation before analysis.
+
+Another critical concept to understand is the difference between a
+missing value and a value of zero (Zimmer et al., 2024).
+
+In RStudio, missing data are represented as \texttt{NA}, which stands
+for ``not available.'' An \texttt{NA} means that no valid response was
+recorded for that cell. That might occur because a respondent skipped a
+question, was not eligible to answer it, or recorded a response that was
+invalid (such as selecting two answers to the same question or penciling
+in a response off the given answer scale).
+
+A value of \texttt{0}, by contrast, is not missing. A zero is a recorded
+value that has meaning defined in the data documentation. For example, a
+value of \texttt{0} might indicate that a respondent did not engage in a
+particular activity, used a practice zero times, or selected a specific
+response option that was coded \texttt{0}.
+
+This distinction matters because R treats \texttt{NA} and \texttt{0}
+very differently. Missing values are excluded from most calculations by
+default, while zero values are included. If you accidentally treat a
+zero as missing, or a missing value as a zero, you can seriously distort
+your results.
+
+For these reason, one of your first responsibilities when working with a
+dataset is to use the codebook to determine which values represent real
+responses and which represent missing or non-applicable information.
+Only then can you begin summarizing your data with confidence.
+
+Glossary Terms: Statistics: Techniques and procedures for working with
+quantitative data. Data: A collection of information. Raw data: Data in
+its original, unorganized form before it has been summarized or cleaned.
+Missing value: Data entries indicating that no valid response is
+available; coded as NA in R.
+
+\section{Data Documentation}\label{data-documentation}
+
+Once you understand the basic structure of a dataset -- rows as people,
+columns as variables, and cells as values -- the next step is learning
+how to interpret what those values actually mean. This is where data
+documentation, and especially the codebook, becomes essential.
+
+Without documentation a dataset is just a jumble of numbers. With
+documentation, those numbers become meaningful information about people,
+behaviors, and perceptions.
+
+A codebook (sometimes called a data dictionary) serves as the
+translation key between human language and machine-readable data (Arthur
+\& Clark, 2021).
+
+At minimum, a codebook typically tells you:
+
+\begin{itemize}
+\tightlist
+\item
+  The variable name used in the dataset
+\item
+  A description of what the variable measures (the survey question)
+\item
+  The value label assigned to each response option
+\item
+  Any special codes used for ``don't know'' or inapplicable responses
+  (Zimmer et al., 2024)
+\end{itemize}
+
+For example, a survey question asking about the frequency of septic tank
+pumping may be stored as a variable named SEPTICPUMP, with values coded
+as:
+
+\begin{itemize}
+\tightlist
+\item
+  0 = Never
+\item
+  1 = More than 10 years
+\item
+  2 = Every 6-10 years
+\item
+  3 = Every 3-5 years
+\item
+  998 = I don't have a septic system
+\end{itemize}
+
+Looking only at the dataset, you would see numbers like
+\texttt{0,\ 1,\ 2,\ 3,\ 998}. The codebook tells you how to interpret
+those numbers correctly.
+
+It may be tempting to jump straight into calculating averages, creating
+graphs, or running models as soon as you load your data in R. However,
+doing so without consulting the codebook can lead to serious errors
+(Sheppard, 2020). Because of this, you should always examine the
+codebook before summarizing a variable and be familiar with the items as
+they were presented to respondents in the questionnaire, or survey
+instrument, itself (Zimmer et al., 2024).
+
+Most surveys include responses that are not part of an ordered scale,
+such as ``don't know'' or ``not applicable.'' These responses are often
+assigned out-of-range values (such as 9, 99, or 998) so that they are
+not confused with substantive responses (Arther \& Clark, 2021; Zimmer
+et al., 2024). These numeric codes may need to be converted to missing
+data (NA) before calculating means or medians, or they will distort the
+reported values. Considering our perceptions of water quality variables,
+above, if I calculated an average for these items without reassigning
+out-of-range values to missing data, I might end up with an average
+score of 6 on an item whose substantive range is 1-4. Oops!
+
+Beyond interpreting values, codebooks also guide common data management
+tasks, such as deciding when to create dummy variables (0/1 indicators),
+identifying variables that need reverse coding, understanding how
+multi-item concepts are measured, and determining which variables are
+comparable across survey locations. These transformations are a routine
+part of quantitative data preparation (Arthur \& Clark, 2021).
+
+Using documentation may feel tedious or confusing at first, but it is
+one of the most important habits you will develop as a data analyst.
+Careful attention to codebooks prevents misinterpretation, supports
+transparency, and ensures that your findings are defensible. Before
+moving on to describing distributions or calculating statistics, make it
+routine to ask:
+
+\begin{itemize}
+\tightlist
+\item
+  What does this variable measure?
+\item
+  What do the values represent?
+\item
+  Are any responses coded in a special way?
+\item
+  Do I need to clean or recode this variable before summarizing it?
+\end{itemize}
+
+These questions will guide you toward more accurate analysis.
+
+Glossary Terms: Data documentation: The collection of materials, such as
+codebooks, questionnaires, and technical notes, that describe how data
+were collected, coded, and structured. Codebook: A document that
+explains how survey responses were recorded and stored in a dataset.
+Questionnaire: The survey instrument presented to respondents. Value
+label: Descriptions that explain what specific numeric values represent
+(e.g., 1 = ``Never,'' 3 = ``Every 3--5 years''). Out-of-range value: A
+numeric code (such as 9, 99, or 998) used to represent responses like
+``don't know'' or ``not applicable'' that fall outside the substantive
+response scale. Data management: The process of preparing data for
+analysis, including cleaning, recoding, transforming variables, and
+handling missing or special values. Dummy variables: A binary variable
+coded as 0 or 1 to indicate the absence or presence of a specific
+characteristic or response. Reverse coding: A data management technique
+that flips the direction of a scale so higher values consistently
+represent the same underlying concept.
+
+\section{Frequency distributions}\label{frequency-distributions}
+
+We've talked all around it so now let's get down to business -- it's
+time to look at our survey data. When I begin any data exploration, the
+first thing I want to do is get familiar with the distribution of
+responses on each item in my analysis. This gives me an understanding of
+how people responded to each survey question and whether or not an
+individual item is a good candidate for use in more advanced analyses.
+
+As we've reviewed, data in their raw form appear as unordered sets of
+scores that don't tell us very much. A frequency distribution organizes
+data by summarizing how often a specific score was obtained (Kranzler,
+2017).
+
+For example, take a look at these quiz scores from my SOC 105: Social
+Problems course. What can we know about this group of quiz scores at
+first glance?
+
+Not much! If you scored 12/15 points, what would that tell you? Did you
+do better or worse than the average student? To answer these questions,
+we need to organize our quiz score data by creating a frequency
+distribution.
+
+The first step is to identify the highest and lowest score in the set.
+
+Next, I'll make a list of all possible scores, from lowest to highest.
+
+Then, I'll go through the scores, one-by-one, and make a tally mark each
+time a score occurs.
+
+Finally, I'll count the number of tallies to find the frequency (f) with
+which each score appeared in the dataset.
+
+What can we know about this group of quiz scores now? More than before!
+The scores range from 6-15. The score obtained most often was 13. Most
+scores were between 10-14, so your score (12) was close to the class
+average.
+
+Displaying frequency distributions graphically can be helpful for
+describing the shape of the distribution of scores on a given variable
+(Agresti, 2018).
+
+Observing the shape of the distribution is important for determining the
+extent to which responses on an item varied evenly, diverged sharply, or
+grouped around a single answer option.
+
+A bell-shaped distribution indicates that most scores fall near a
+central value. This is also called a ``normal'' curve. The distribution
+is symmetrical.
+
+In Contrast, a U-shaped distribution indicates that most scores fall
+near the highest and lowest possible values, meaning that the variable
+is polarized.
+
+Additionally, a {[}pb\_glossary id=``595''{]}skewed
+distribution{[}/pb\_glossary{]} has values that cluster around a common
+score. The distribution may be negatively (right) skewed, with most
+scores clustered at the high end of the distribution and the tail of the
+distribution longer on the left side than the right. Or, it may be
+positively (left) skewed, with most scores clustered at the low end of
+the distribution and the tail of the distribution longer on the right
+side than the left.
+
+The shape of the distribution matters because it affects what we can
+reasonably do with the data next. Variables that follow a normal
+distribution are especially analytically rich. When responses are
+distributed symmetrically around a central value, common summary
+statistics provide a meaningful description of a ``typical'' case. Many
+statistical techniques assume a normal distribution, and highly skewed
+distributions make it difficult to assess differences between groups.
+All distributions tell us something meaningful about people's responses,
+but their analytic power and suitability for further analysis can vary.
+
+Glossary Terms: Bell-shaped distribution: a distribution in which most
+scores fall near a central value, producing a symmetrical shape.
+Frequency distribution: a summary that describes how often a specific
+score appears in a dataset. Skewed distribution: a distribution in which
+most scores fall near the high or low end of the values possible,
+producing a long tail on one end.
+
+\section{Summary}\label{summary}
+
+This chapter focused on the transition from raw data to meaningful
+statistical insight. Rather than rushing into calculations, we
+emphasized the importance of slowing down to understand how data are
+structured, documented, and interpreted before analysis begins. Doing so
+helps ensure that the numbers we work with accurately reflect people's
+responses and experiences.
+
+We explored how organizing data into frequency distributions transforms
+unordered values into interpretable patterns. Looking at how responses
+are distributed allows us to see where answers cluster, how much they
+vary, and whether a variable is likely to support more advanced
+analysis. Just as importantly, we highlighted that not all data are
+immediately ready for analysis. Values may require interpretation,
+cleaning, or recoding before they can be summarized responsibly.
+
+Together, these steps establish a foundation for descriptive statistics:
+understanding what the data represent, how responses are distributed,
+and why those patterns matter. Moving forward, we'll build on this
+foundation by introducing levels of measurement and work on formally
+describing the center and spread of distributions. Keep calm and
+statistics on!
+
+\section{Reflection Questions}\label{reflection-questions}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Survey datasets often include values that represent different
+  kinds of information, such as substantive responses, missing data, or
+  special codes like ``don't know.''} How might misunderstanding these
+  distinctions affect the conclusions a researcher draws from a dataset?
+\item
+  \textbf{Frequency distributions are often the first step in
+  quantitative analysis.} How does examining the distribution of
+  responses help researchers assess whether a survey question
+  meaningfully captures variation in people's experiences or opinions?
+\item
+  \textbf{The shape of a distribution can reveal clustering,
+  polarization, or imbalance in responses.} Why is understanding these
+  patterns important before applying more advanced statistical
+  techniques?
+\item
+  \textbf{Early decisions about how data are organized, cleaned, and
+  summarized shape everything that follows in an analysis.} How might
+  careless early steps limit the usefulness or credibility of later
+  findings?
+\end{enumerate}
+
+\section{References}\label{references}
+
+Agresti, A. (2018). Statistical methods for the social sciences (5th
+ed.). Pearson Education.
+
+Arthur, M. M. L., \& Clark, R. (2021). Social data analysis: Qualitative
+and quantitative approaches. Open Educational Resource.
+
+Çetinkaya-Rundel, M. and Hardin, J. (2024). Introduction to Modern
+Statistics, 2e. OpenIntro. CC-SA 3.0
+(https://openintro-ims.netlify.app/).
+
+Kranzler, J.H. (2017). Statistics for the Terrified (6th ed.). Roman \&
+Littlefield.
+
+Sheppard, V. (2020). Research Methods for the Social Sciences: An
+Introduction. Pressbooks. CC-BY-NC-SA 4.0.
+(https://pressbooks.bccampus.ca/jibcresearchmethods/).
+
+Zimmer, S. A., Powell, R. J., \& Velásquez, I. C. (2024). Exploring
+Complex Survey Data Analysis Using R: A Tidy Introduction with \{srvyr\}
+and \{survey\}. Chapman \& Hall: CRC Press.
+(https://tidy-survey-r.github.io/tidy-survey-book/).
+
+
+
+
+\end{document}

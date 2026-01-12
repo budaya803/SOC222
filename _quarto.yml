@@ -1,0 +1,30 @@
+project:
+  type: book
+
+book:
+  title: "Sociology of Water Management"
+  author: "A. Buday"
+  date: "12/30/2025"
+  
+  chapters:
+    - index.qmd
+    - chapter1.qmd
+    - chapter2.qmd
+    - chapter3.qmd
+    - chapter4.qmd
+    - chapter5.qmd
+    - chapter6.qmd
+    - chapter7.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    fig-width: 7
+    css: references.css
+    theme:
+      - cosmo
+      - brand
+
+editor: visual
+

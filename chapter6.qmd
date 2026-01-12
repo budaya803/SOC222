@@ -1,0 +1,325 @@
+---
+title: "Exploring Relationships"
+---
+
+**Learning Objectives**
+
+-   Formulate clear, testable hypotheses
+-   Explain the logic of null hypothesis significance testing (NHST)
+-   Select and apply appropriate measures of association
+-   Interpret and communicate statistical results
+
+------------------------------------------------------------------------
+
+Watershed research, like social science more broadly, is often concerned with relationships. We may wonder how environmental conditions, behaviors, or perceptions relate and whether they vary together in meaningful ways. Hypothesis testing provides a structured way to evaluate these questions using data.
+
+In this chapter, we focus on identifying independent and dependent variables and thinking critically about what kinds of relationships might exist in a dataset. Understanding these foundational elements will help you choose the appropriate statistical tests to evaluate associations in your data, ensuring you have a clear framework for testing relationships in your data.
+
+This chapter was adapted from [Arthur and Clark (2021)](https://pressbooks.ric.edu/socialdataanalysis/), a valuable source for further reading on hypothesis testing and measures of association.
+
+## Hypothesis Testing
+
+A <abbr title="A statement making a prediction about a characteristic of a population."style="font-weight: bold; text-decoration: underline dotted; cursor: help;"> <em>hypothesis</em> </abbr> is a clear, testable statement about a relationship we expect to observe in the world. Hypotheses force us to be explicit about what we think is related to what, and in which direction that relationship operates.
+
+Stating a hypothesis requires distinguishing between independent and dependent variables.
+
+-   The **independent variable (IV)** is the causal factor that drives a change in another (dependent) variable. This is also called the **explanatory variable**.
+-   The **dependent variable (DV)** is the outcome variable that changes in response to the independent variable. This is also called the **response variable**.
+
+Hypotheses formalize expectations about how these variables relate at the population level. The <abbr title="A statement assuming that there is an absence of effect."style="font-weight: bold; text-decoration: underline dotted; cursor: help;"> <em>null hypothesis</em> </abbr> ($H_0$) states that no relationship exists between variables. In contrast, the <abbr title="A statement assuming that an observed value differs from the null."style="font-weight: bold; text-decoration: underline dotted; cursor: help;"> <em>alternative hypothesis</em> </abbr> ($H_1$) proposes that a relationship does exist.
+
+For example:
+
+-   $H_0$: There is no relationship between the number of ice cream cones eaten in the past 12 months and belt size (all right!).
+
+-   $H_1$: There is a positive relationship between the number of ice cream cones eaten in the past 12 months and belt size; as the number of ice cream cones eaten increases, so does belt size (bummer!).
+
+While decidedly on the silly side, this example illustrates that hypotheses are not conclusions; they are claims to be evaluated.
+
+## Statistical Significance
+
+How do we know if two variables in our dataset are related in a statistically meaningful way?
+
+<abbr title="A method for evaluating evidence in a dataset by assessing how likely an observed result would be if the null hypothesis were true."style="font-weight: bold; text-decoration: underline dotted; cursor: help;"> <em>Null hypothesis significance testing,</em> </abbr> or NHST, is a method of testing for statistical significance by comparing observed data to what we would expect to see if there were no relationship between the variables or phenomena in question. NHST begins by assuming the null hypothesis is true. Evidence from the data is then used to determine whether this assumption should be rejected. This approach, while somewhat counterintuitive, means that we assume that differences or patterns occur due to chance unless strong evidence suggests otherwise. This keeps us searching for evidence that disconfirms our hypothesis, making it less likely that we will accept a conclusion that later turns out to be untrue.
+
+The <abbr title="A value that indicates how likely an observed result could have occurred by chance under the null hypothesis."style="font-weight: bold; text-decoration: underline dotted; cursor: help;"> <em>$p$-value</em> </abbr> represents the probability of observing a test statistic as extreme as the one obtained *if the null hypothesis were correct.* Smaller $p$-values indicate that the observed data are less consistent with the null hypothesis.
+
+In practice, researchers select a significance level (commonly $p < 0.05$) that reflects how much risk they are willing to accept of mistakenly rejecting the null hypothesis. When the $p$-value falls below this threshold, the result is considered statistically significant, and the null hypothesis is rejected.
+
+A $p$-value can be interpreted as the percent likelihood that the pattern we observed could have occurred by chance, assuming there is actually no relationship in the population. For example, a $p$-value of 0.03 suggests that *if the null hypothesis were correct,* there is about a 3% chance of observing a result this extreme due to random variation alone. In other words, it is unlikely that chance alone (the null hypothesis) explains the observed result.
+
+When the $p$-value falls below the chosen significance level, we conclude that the observed pattern is sufficiently unlikely to be explained by chance variation and reject the null hypothesis. When the $p$-value exceeds the threshold, the evidence is not strong enough to rule out chance as a possible explanation, and the null hypothesis is not rejected.
+
+Feeling confused? Stop and watch this easy-to-follow explanation from the experts at Data Demystified:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DAkJhY2zQ3c?si=tt2lqwad6rAhu6Fp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+
+</iframe>
+
+Importantly, statistical significance does not imply that a relationship is large, important, or causal - only that it is unlikely to have occurred by chance, as assumed by the null hypothesis.
+
+## Measures of Association
+
+Once a hypothesis is specified and uncertainty is acknowledged, we turn to measures of association to quantify relationships between variables. These measures provide a way to summarize how strongly variables are related and whether observed patterns are consistent with more than chance variation.
+
+A <abbr title="A numerical summary of sample data used to evaluate a hypothesis."style="font-weight: bold; text-decoration: underline dotted; cursor: help;"> <em>test statistic</em> </abbr> is a numerical value calculated from sample data that summarizes evidence against the null hypothesis and is used to compute a $p$-value. The test statistic reflects whether there is a consistent and robust association between variables.
+
+There are different tests of statistical significance, and the technique you'll use will depend on the characteristics of the variables you are examining.
+
+### Chi-Square Test
+
+A **Chi-Square** ($\chi^2$) test is a statistical test used to determine whether there is a statistically significant association between two categorical variables. It is commonly applied when variables consist of a small number of categories and can be summarized in a contingency table.
+
+For example, we might ask: *Is property type related to how important fishing is to residents?*
+
+In this case, the hypotheses can be stated as:
+
+-   $H_0$: Property type and the importance of fishing are statistically independent; owners of different property types are equally likely to consider fishing important.
+-   $H_1$: Property type and the importance of fishing are not statistically independent; the importance of fishing varies across property types.
+
+Before computing the Chi-square statistic, it is useful to first examine how responses are distributed across categories. A **contingency table** (also called a cross-tabulation) summarizes this relationship by displaying the frequency of each combination of categories. Rows represent one variable, columns represent the other, and cells contain the number (and often percentage) of observations in each category combination. Because interpretation becomes more difficult as the number of categories increases, contingency tables are most effective when variables have relatively few categories (typically two or three).
+
+```{r load-packages, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(janitor)
+library(broom)
+library(rstatix)  
+
+data <- read_csv("demo_data.csv")
+```
+
+```{r warning=FALSE}
+data2 <- data %>% 
+  mutate(
+    MOSTIMPFISH_MISS = na_if(MOSTIMPFISH, 9),
+    TYPE_FACTOR = factor(TYPE,
+                  levels = c(1, 2, 3),
+                  labels = c("Residential", "Small farm", "Large farm")),
+    MOSTIMPFISH_FACTOR = factor(MOSTIMPFISH_MISS,
+                              levels = c(0, 1),
+                              labels = c("Not important", "Important"))
+  ) %>% 
+  drop_na(TYPE_FACTOR, MOSTIMPFISH_FACTOR)
+
+crosstab <- data2 %>%  
+  tabyl(TYPE_FACTOR, MOSTIMPFISH_FACTOR) %>% 
+  adorn_totals(where = "col") %>%   
+  adorn_percentages(denominator = "row") %>% 
+  adorn_pct_formatting(digits = 1) %>%  
+  adorn_ns()  
+
+crosstab
+```
+
+In this example, the contingency table shows that:
+
+-   Among residential property owners, 54.8% reported that fishing is not an important activity, while 45.2% reported that it is important.
+-   Among small farm owners, 61.3% reported that fishing is not an important activity, and 45.2% reported that it is important.
+-   Among large farm owners, 56.5% reported that fishing is not important, and 43.5% reported that it is important.
+
+To formally evaluate whether these observed differences are larger than we would expect by chance alone, we use a Chi-square test of independence.
+
+```{r}
+chisq_result <- chisq.test(xtabs(~ TYPE_FACTOR + MOSTIMPFISH_FACTOR, data = data2))
+
+chisq_result %>% 
+  broom::tidy() %>% 
+  select(statistic, parameter, p.value) %>% 
+  rename(
+    chi_square = statistic,
+    df = parameter,
+    p_value = p.value
+  )
+```
+
+The Chi-square test output indicates a test statistic of $\chi^2 = 1.02$ with 2 <abbr title="The number of independent comparisons being made in the table."style="font-weight: bold; text-decoration: underline dotted; cursor: help;"> <em>degrees of freedom</em> </abbr> and a $p$-value of 0.60. This $p$-value is well above the conventional significance threshold of 0.05, meaning that differences of this size would be fairly common if property type and the importance of fishing were truly unrelated in the population.
+
+Because the $p$-value exceeds the chosen significance level, we *fail to reject the null hypothesis.* In practical terms, this means that although the percentages differ somewhat across property types, the evidence is not strong enough to conclude that property type and the importance of fishing are associated beyond what might occur by chance.
+
+### Spearman's Rank Correlation
+
+While the Chi-square test is used to examine relationship between categorical variables, correlation coefficients are used to assess associations between variables measured on an ordinal or continuous scale. **Spearman's rho** measures the direction and strength of the relationship between two variables by asking whether higher or lower values of one variable tend to be associated with higher or lower values of another. Instead of comparing exact numeric values, it compares the relative ordering of observations, which makes it appropriate for ordinal data.
+
+For example, we might ask: *Is perceived severity of E. coli pollution related to education level?*
+
+This question can be framed using the following hypotheses:
+
+-   $H_0$: There is no association between perceptions of *E. coli* pollution and education level.
+-   $H_1$: There is an association between perceptions of *E. coli* pollution and education level.
+
+The alternative hypothesis can be further specified by direction. A **positive association** would indicate that concern about *E. coli* pollution increases as education level increases, while a **negative association** would indicate that concern decreases as education level increases.
+
+```{r}
+data <- data %>%  
+  mutate(IMPECOLI_MISS = na_if(IMPECOLI, 9),
+         EDUCATION_MISS = na_if(EDUCATION, 9)) %>% 
+    drop_na(IMPECOLI_MISS, EDUCATION_MISS)
+
+cor_test_result <- data %>%   
+  cor_test(IMPECOLI_MISS, EDUCATION, method = "spearman")
+
+cor_test_result %>% 
+  select(cor, p) %>% 
+  rename(
+    rho = cor,
+    p_value = p
+  )
+```
+
+Spearman’s rho ranges from −1 to +1, with values closer to −1 or +1 indicating stronger associations and values near zero indicating weak or no association. As a general guideline:
+
+-   $|\rho| < 0.3$ indicates a weak association\
+-   $0.3 \le |\rho| < 0.6$ indicates a moderate association\
+-   $|\rho| \ge 0.6$ indicates a strong association
+
+In this example, Spearman’s rho is −0.10, indicating a *very weak negative association* between education level and perceived severity of *E. coli* pollution. This suggests that respondents with higher levels of education report slightly lower concern about *E. coli* pollution, although the relationship is minimal in magnitude and explains very little variation in perceptions.
+
+The associated $p$-value is 0.18, which exceeds the conventional significance threshold of 0.05. This means that an association of this size would be fairly common if there were truly no relationship between education level and perceptions of *E. coli* pollution in the population. As a result, we *fail to reject the null hypothesis* and conclude that there is insufficient evidence to support a meaningful association beyond what might be expected by chance.
+
+## Comparing Groups
+
+Comparing groups is a special case of relationship analysis in which the independent variable defines group membership. Rather than asking whether two variables vary together, we are asking whether distributions differ across groups.
+
+When the outcome variable is ordinal - as many variables in the West MI Watersheds Database are - we use rank-based tests to compare groups.
+
+### Comparing Two Groups
+
+The **Mann-Whitney U** statistic, (also reported as the **W** statistic in R), is used to compare the distribution of an ordinal outcome between two independent groups. Instead of comparing means (like a t-test), the Mann-Whitney U test evaluates whether values from one group tend to by systematically higher or lower than values from the other group.
+
+For example, we might as: *Do perceptions of E. coli pollution differ between men and women?*
+
+This question can be framed using the following hypotheses:
+
+-   $H_0$: The distributions of perceived *E. coli* pollution severity are the same for men and women.
+-   $H_1$: The distributions of perceived *E. coli* pollution severity differ between men and women.
+
+The Mann-Whitney U test works by ranking all observations across both groups and comparing the sum of ranks for each group. If one group consistently has higher ranks than the other, this suggests a difference in distributions.
+
+```{r}
+data3 <- data %>% 
+  mutate(
+    IMPECOLI_MISS = na_if(IMPECOLI, 9),
+    GENDER_FACTOR = factor(
+      na_if(GENDER, 9),
+      levels = c(0, 1),
+      labels = c("Male", "Female")
+    )
+  ) %>% 
+  drop_na(IMPECOLI_MISS, GENDER_FACTOR)
+
+w_result <- data3 %>%
+  wilcox_test(IMPECOLI_MISS ~ GENDER_FACTOR, exact = FALSE)
+
+w_result %>% 
+  transmute(
+    W = round(statistic, 0),
+    p_value = round(p, 3)
+  )
+```
+
+Because **W** is based on the sum of ranks, its possible values depend on how many observations are in each group. The maximum possible value of **W** is given by:
+
+$W_{\max} = n_1 \times n_2$.
+
+The smallest value occurs when all observations in one group receive lower ranks than those in the other group, and the largest value occurs when all observations in one group receive higher ranks. Values near the middle of this range indicate substantial overlap between group distributions, while values closer to the extremes indicate greater separation.
+
+In this example, the Mann-Whitney U test produced a test statistic of **W = 2935** with an associated $p$-value of 0.026. Because the $p$-value is below the conventional significance threshold of 0.05, we reject the null hypothesis and conclude that perceptions of *E. coli* pollution severity differ between male and female respondents.
+
+Examining the group medians helps clarify the direction of this difference.
+
+```{r}
+data3 %>% 
+  group_by(GENDER_FACTOR) %>% 
+  summarise(
+    n = n(),
+    median_impecoli = median(IMPECOLI_MISS),
+    .groups = "drop"
+  )
+```
+
+The median perceived severity score is 2 for male respondents and 3 for female respondents, indicating that female respondents tend to report higher concern about *E. coli* pollution than male respondents. In terms of the Mann–Whitney test logic, this means that responses from female respondents tend to receive higher ranks than responses from male respondents.
+
+Together, these results suggest a statistically significant difference in perceived *E. coli* pollution severity by gender. While the Mann–Whitney U test does not estimate the size of this difference in the original measurement units, it provides evidence that the distributions of concern are not the same across the two groups and that gender is associated with variation in perceived pollution severity.
+
+### Comparing Three or More Groups
+
+When the independent variable defines three or more groups, the **Kruskal-Wallis** test extends the logic of the Mann-Whitney U test to multiple groups. Like the Mann–Whitney test, it relies on ranked data and compares distributions rather than means.
+
+For example, we might ask: *Does the frequency of septic system pumping differ by property owner type?*
+
+The hypotheses can be stated as:
+
+-   $H_0$: The distributions of septic system pumping frequency are the same across all property owner types.
+-   $H_1$: At least one property owner group has a different distribution of septic system pumping frequency.
+
+```{r}
+kw_result <- data %>% 
+  kruskal_test(SEPTICPUMP ~ TYPE) %>% 
+  select(statistic, df, p) %>% 
+  mutate(
+    H = round(statistic, 2),
+    p_value = round(p, 3)
+  ) %>% 
+  select(H, df, p_value)
+
+kw_result
+
+```
+
+In this example, the Kruskal-Wallis test was used to examine whether the septic system pumping frequency differs across property owner types (residential, small farm, and large farm).
+
+The test produced an H statistic of 1.90 with 2 degrees of freedom and an associated $p$-value of 0.386. Because this $p$-value is well above the conventional significance threshold of 0.05, we fail to reject the null hypothesis. This indicates that the observed differences in septic pumping frequency across property owner types are not sufficiently large to rule out chance variation under the null hypothesis.
+
+In practical terms, this result suggests that the distributions of septic system pumping frequency are broadly similar across residential, small farm, and large farm properties in this dataset. Although individual households may differ in how often they pump their systems, there is no statistical evidence that pumping frequency systematically varies by property type.
+
+The Kruskal-Wallis test does not tell us which groups differ, only that at least one group differs. If we reject $H_0$, we need to conduct **Dunn's post-hoc test** to determine which group is not like the others. For the sake of demonstration, we will conduct post-hoc pairwise comparisons using our current example, but note that post-hoc tests are only necessary when the overall Kruskal-Wallis test is statistically significant because post-hoc tests are designed to identify which groups differ after an overall difference has been established.
+
+```{r}
+dunn_result <- data %>%  
+  dunn_test(SEPTICYEAR ~ TYPE, p.adjust.method = "holm") %>% 
+  mutate(
+    group1 = recode(group1, "1" = "Residential", "2" = "Small farm", "3" = "Large farm"),
+    group2 = recode(group2, "1" = "Residential", "2" = "Small farm", "3" = "Large farm"),
+    significant = if_else(p.adj < 0.05, "Yes", "No")
+  ) %>% 
+  select(group1, group2, statistic, p.adj, significant) %>% 
+  rename(
+    comparison_1 = group1,
+    comparison_2 = group2,
+    Z = statistic,
+    p_value_adj = p.adj
+  )
+
+dunn_result
+
+```
+
+Each row in the output represents a comparison between two groups, and the adjusted $p$-values account for the increased risk of false positives that arises when conducting multiple tests.
+
+In this example, comparisons involving large farm properties show statistically significant differences from both residential and small farm properties after adjustment. However, because the overall Kruskal-Wallis test was not statistically significant, these differences should be interpreted cautiously and should not be taken as strong evidence of systematic differences across property types.
+
+## Summary
+
+In this chapter, we moved from describing individual variables to examining relationships between variables. We began by defining hypotheses as testable statements about expected relationships and emphasized the importance of clearly identifying independent and dependent variables before conducting any analysis. We then introduced null hypothesis significance testing (NHST) as a framework for evaluating whether observed patterns in data are likely to reflect real relationships in the population or could plausibly have occurred by chance. Throughout the chapter, the $p$-value served as a tool for quantifying uncertainty, reminding us that statistical tests do not prove relationships but instead help us assess the strength of evidence against the null hypothesis.
+
+Building on this framework, we explored several measures of association, each suited to different types of variables and research questions. The Chi-square test allowed us to evaluate relationships between categorical variables, Spearman’s rho helped us assess associations between ordinal variables, and rank-based tests such as the Mann–Whitney U and Kruskal–Wallis tests enabled comparisons of distributions across groups when outcomes were ordinal. Across all examples, emphasis was placed on considering direction, strength, statistical significance, and practical meaning.
+
+It's important to remember that statistical tools are part of an iterative research process that links theory, measurement, analysis, and interpretation. Thoughtful hypothesis formulation, appropriate test selection, and cautious interpretation are all essential for drawing meaningful conclusions about relationships and deciding which are worth including in our final report.
+
+## Reflection Questions
+
+1.  **Hypotheses translate research questions into testable claims.** Why is it important to clearly identify independent and dependent variables before conducting a hypothesis test?
+
+2.  **Different statistical tests are suited to different types of variables.** What problems can arise if a test designed for categorical variables is applied to ordinal or continuous data, or vice versa?
+
+3.  **Several examples in this chapter resulted in failing to reject the null hypothesis.** Why is this outcome still informative, and how should non-significant findings be communicated in applied environmental research?
+
+4.  **Measures of association summarize relationships but not underlying processes.** Why is contextual knowledge essential for translating statistical findings into meaningful insights for watershed management or policy decisions?
+
+## References
+
+::: references
+-   Arthur, M. M. L., & Clark, R. (2021). Social Data Analysis: Qualitative and Quantitative Approaches. Open Educational Resource.<https://pressbooks.ric.edu/socialdataanalysis/>.
+-   Agresti, A. (2018). Statistical Methods for the Social Sciences (5th ed.). Pearson.
+-   Conover, W. J. (1999). Practical Nonparametric Statistics (3rd ed.). Wiley.
+:::
