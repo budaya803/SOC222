@@ -301,3 +301,4 @@ When these elements work together, research becomes more than an academic exerci
 -   Visser, C., Trichter, D., & Sohal, A. (2024). Document accessibility: How to comply with the latest standards. AccessibilityChecker.org. <https://www.accessibilitychecker.org/guides/document-accessibility/>.
 -   Zimmer, S. A., Powell, R. J., & Velásquez, I. C. (2025). Chapter 8: Communication of results. In Exploring Complex Survey Data Analysis Using R: A Tidy Introduction with {srvyr} and {survey}. <https://tidy-survey-r.github.io/tidy-survey-book/c08-communicating-results.html>.
 :::
+<!-- redeploy -->
