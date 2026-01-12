@@ -1,4 +1,4 @@
 [build]
-  command = "curl -L -o quarto.tar.gz https://quarto.org/download/latest/quarto-linux-amd64.tar.gz && tar -xzf quarto.tar.gz && mv \"$(tar -tzf quarto.tar.gz | head -1)\" quarto && export PATH=\"$PWD/quarto/bin:$PATH\" && quarto --version && quarto render"
+  command = "echo 'Using pre-rendered Quarto book (no build on Netlify)'"
   publish = "_book"
 
