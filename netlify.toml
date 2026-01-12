@@ -1,0 +1,3 @@
+[build]
+  command = "curl -L https://quarto.org/download/latest/quarto-linux-amd64.tar.gz | tar xz && export PATH=$PATH:$(pwd)/quarto/bin && quarto render"
+  publish = "_book"

@@ -213,23 +213,23 @@ Some figures summarize results that are later evaluated using statistical tests.
 
 When reporting chi-square results, researchers typically include the test statistic, degrees of freedom, sample size, and $p$-value:
 
-> *A chi-square test of independence indicated a statistically significant relationship between property type and septic pumping frequency, χ²(6, N = 412) = 14.8, $p$ \< .01.*
+> *A chi-square test of independence indicated a statistically significant relationship between property type and septic pumping frequency, χ²(6, N = 412) = 14.8,* $p$ \< .01.
 
 When reporting Spearman’s rho results, researchers typically include the correlation coefficient (ρ) and the $p$-value.
 
-> *Both years lived in the watershed (ρ = .31, $p$ \< .001) and frequency of septic tank pumping (ρ = .22, $p$ \< .01) were significantly correlated with the perceived severity of E. coli pollution.*
+> *Both years lived in the watershed (ρ = .31,* $p$ \< .001) and frequency of septic tank pumping (ρ = .22, $p$ \< .01) were significantly correlated with the perceived severity of E. coli pollution.
 
 When reporting Mann–Whitney U test results, researchers typically report the median and interquartile range (IQR) for each group, followed by the test statistic and $p$-value.
 
-> *There was a significant difference in nitrate concern scores between respondents living within 100 meters of surface water (Median = 4.0, IQR = 1.0) and those living farther away (Median = 3.5, IQR = 1.0); W = 8234, $p$ = .02.*
+> *There was a significant difference in nitrate concern scores between respondents living within 100 meters of surface water (Median = 4.0, IQR = 1.0) and those living farther away (Median = 3.5, IQR = 1.0); W = 8234,* $p$ = .02.
 
 When results are not statistically significant, this should also be stated explicitly.
 
-> *There was no significant difference in reported septic inspection frequency between year-round residents (Median = 2.0, IQR = 1.0) and seasonal residents (Median = 2.0, IQR = 1.0); W = 10512, $p$ = .38.*
+> *There was no significant difference in reported septic inspection frequency between year-round residents (Median = 2.0, IQR = 1.0) and seasonal residents (Median = 2.0, IQR = 1.0); W = 10512,* $p$ = .38.
 
 When reporting Kruskal–Wallis test results, researchers typically report the median and interquartile range (IQR) for each group, followed by the test statistic with degrees of freedom and the $p$-value. If post-hoc comparisons are conducted, those results should also be reported.
 
-> *There was a significant difference in self-reported shoreline stewardship engagement among residents in agricultural watersheds (Median = 3.0, IQR = 1.0), mixed-use watersheds (Median = 4.0, IQR = 1.0), and primarily residential watersheds (Median = 4.5, IQR = 1.0); H(2) = 11.28, $p$ = .004. Post-hoc pairwise comparisons using Dunn’s test with Holm-adjusted p-values indicated a significant difference between agricultural and residential watersheds (U = 6841, $p$ = .006), but not between agricultural and mixed-use watersheds ($p$ = .042) or mixed-use and residential watersheds ($p$ = .071).*
+> *There was a significant difference in self-reported shoreline stewardship engagement among residents in agricultural watersheds (Median = 3.0, IQR = 1.0), mixed-use watersheds (Median = 4.0, IQR = 1.0), and primarily residential watersheds (Median = 4.5, IQR = 1.0); H(2) = 11.28,* $p$ = .004. Post-hoc pairwise comparisons using Dunn’s test with Holm-adjusted p-values indicated a significant difference between agricultural and residential watersheds (U = 6841, $p$ = .006), but not between agricultural and mixed-use watersheds ($p$ = .042) or mixed-use and residential watersheds ($p$ = .071).
 
 The goal is not to overwhelm readers with statistics, but to provide transparent evidence that supports the patterns shown in the figures.
 
@@ -301,4 +301,3 @@ When these elements work together, research becomes more than an academic exerci
 -   Visser, C., Trichter, D., & Sohal, A. (2024). Document accessibility: How to comply with the latest standards. AccessibilityChecker.org. <https://www.accessibilitychecker.org/guides/document-accessibility/>.
 -   Zimmer, S. A., Powell, R. J., & Velásquez, I. C. (2025). Chapter 8: Communication of results. In Exploring Complex Survey Data Analysis Using R: A Tidy Introduction with {srvyr} and {survey}. <https://tidy-survey-r.github.io/tidy-survey-book/c08-communicating-results.html>.
 :::
-<!-- redeploy -->
