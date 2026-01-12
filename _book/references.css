@@ -1,0 +1,39 @@
+---
+/* References: remove bullets/numbers + keep hanging indent */
+.references ul,
+.references ol {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* Some themes still show markers via ::marker */
+.references li::marker {
+  content: "" !important;
+}
+
+/* Hanging indent on each entry */
+.references li {
+  padding-left: 1.5em;
+  text-indent: -1.5em;
+  margin: 0 0 0.6em 0;
+}
+
+/* Floating images for text wrap */
+.wrap-right {
+  float: right;
+  margin: 0 0 1em 1em;
+  max-width: 40%;
+}
+
+.wrap-left {
+  float: left;
+  margin: 0 1em 1em 0;
+  max-width: 40%;
+}
+
+/* Clear floats when needed */
+.clear {
+  clear: both;
+}
+---

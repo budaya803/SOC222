@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>5&nbsp; Describing Survey Data – Sociology of Water Management</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./chapter6.html" rel="next">
+<link href="./chapter4.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="references.css">
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./chapter5.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Describing Survey Data</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Sociology of Water Management</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Watersheds and Their People</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Human Dimensions of Water</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">West MI Watersheds</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">From Data To Statistics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter5.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Describing Survey Data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter6.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Exploring Relationships</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./chapter7.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Research Writing</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#levels-of-measurement" id="toc-levels-of-measurement" class="nav-link active" data-scroll-target="#levels-of-measurement"><span class="header-section-number">5.1</span> Levels of Measurement</a></li>
+  <li><a href="#measures-of-central-tendency" id="toc-measures-of-central-tendency" class="nav-link" data-scroll-target="#measures-of-central-tendency"><span class="header-section-number">5.2</span> Measures of Central Tendency</a></li>
+  <li><a href="#assessing-variation-in-responses" id="toc-assessing-variation-in-responses" class="nav-link" data-scroll-target="#assessing-variation-in-responses"><span class="header-section-number">5.3</span> Assessing Variation in Responses</a></li>
+  <li><a href="#categorical-distributions" id="toc-categorical-distributions" class="nav-link" data-scroll-target="#categorical-distributions"><span class="header-section-number">5.4</span> Categorical Distributions</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">5.5</span> Summary</a></li>
+  <li><a href="#reflection-questions" id="toc-reflection-questions" class="nav-link" data-scroll-target="#reflection-questions"><span class="header-section-number">5.6</span> Reflection Questions</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">5.7</span> References</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Describing Survey Data</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><strong>Learning Objectives</strong></p>
+<ul>
+<li>Understand the levels of measurement in your analysis</li>
+<li>Describe the shape, center, and variation of a variable</li>
+<li>Organize and visualize categorical proportions</li>
+<li>Examine the spread of numeric data</li>
+</ul>
+<hr>
+<p>After we’ve given the variables in our analysis an initial inspection, verified that the values on variables in our data match those recorded in the codebook, and handled any necessary data management tasks (like recoding out-of-range values to missing), we’re ready to take a deeper look at distributions in our analysis.</p>
+<p><abbr title="Analytic techniques applied to one variable at a time to provide numeric summaries about the data." style="font-weight: bold; text-decoration: underline dotted; cursor: help;"> <em>Descriptive statistics</em> </abbr> are used in this exploratory stage of analysis, where we’re still getting familiar with the characteristics of participants in our survey data and their responses to survey items relevant to our research questions (Gomes, 2021). Our goal at this stage is to create more organized tables and graphics that describe and summarize characteristics of variables in our data.</p>
+<p>At this point, we also need to be mindful of the structure of the variables themselves. Characteristics of the variables determine which statistical techniques are appropriate for summarizing the center and spread of distributions, and which visualizations are appropriate for graphically displaying each item. Therefore, we’ll start by reviewing scales of measurement in our data before moving on to describe each variable’s center and spread.</p>
+<p>Throughout this chapter, pay attention to the number of observations ( <em>n</em> ) underlying any percentages or summary statistics you see. Keep in mind that a pattern based on five responses does not carry the same analytic weight as one based on fifty or more.</p>
+<section id="levels-of-measurement" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="levels-of-measurement"><span class="header-section-number">5.1</span> Levels of Measurement</h2>
+<p>There are several distinctive types of variables based on their measurement characteristics, as summarized in the figure below.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/variables.png" class="img-fluid figure-img" alt="A graphic illustrating distinctions between variable types."></p>
+<figcaption>Variable types (Çetinkaya-Rundel and Hardin, 2024)</figcaption>
+</figure>
+</div>
+<p><abbr title="Variables that can take a wide range of numerical values which can be used for mathematical computations (i.e., add, subtract, or take averages)." style="font-weight: bold; text-decoration: underline dotted; cursor: help;"> <em>Numerical variables</em> </abbr> are measures that can be treated as integers. It makes sense to add, subtract, or average values like number of acres of farmland, or miles driven to a favorite fishing spot. In contrast, a variable measuring the type of property someone owns may still be assigned a number in our dataset, (i.e., farm = 1, rural residence = 2, in-town residence = 3), but it doesn’t make sense to subtract 1 from 2 in this example because this is a <abbr title="Variables with categories that, while assigned numbers, can not be used to make meaningful mathematical computations." style="font-weight: bold; text-decoration: underline dotted; cursor: help;"> <em>categorical variable</em> </abbr> that doesn’t have a clear numeric meaning.</p>
+<p>Numerical variables may be <abbr title="Numerical variables that can take on certain numbers with jumps, as in whole numbers." style="font-weight: bold; text-decoration: underline dotted; cursor: help;"> <em>discrete,</em> </abbr> meaning they can only assume certain values. For example, the number of classes you are currently enrolled in is a discrete variable that can only be a whole number - you may be taking one, two, three, or four classes, but you can’t be taking 1.5 classes. In contrast, <abbr title="Numerical variables that can take on any value, including fractions of a whole number." style="font-weight: bold; text-decoration: underline dotted; cursor: help;"> <em>continuous variables</em> </abbr> can be any value. For example, height and weight can be fractions of a whole number.</p>
+<p>Categorical variables may have a natural ordering, like a variable measuring education level whose attributes range from <em>less than a high school diploma</em> to <em>graduate degree.</em> This is an <abbr title="A variable that ranks people or objects on an ordered scale with the units of measurement being mathematically unequal between categories." style="font-weight: bold; text-decoration: underline dotted; cursor: help;"> <em>ordinal variable</em> </abbr> because characteristics are ranked according to magnitude on a continuum. However, while the values are on an ordered scale, the units of measurement are not equal values apart (which is how you know that it is a categorical variable rather than a numerical variable). In contrast, <abbr title="Variables that assign people to categories that have a distinct numeric value, but the number assigned to each category is arbitrary." style="font-weight: bold; text-decoration: underline dotted; cursor: help;"> <em>nominal variables</em> </abbr> assign people to categories that have a distinct numeric value, but the number assigned to each category is arbitrary. African American respondents are coded “1”, Asian respondents are coded “2”, and Hispanic respondents are coded “3,” for no particular reason.</p>
+<p>Now that we know something about the types of variables in our data, we can apply descriptive statistical techniques to summarize their distributions.</p>
+</section>
+<section id="measures-of-central-tendency" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="measures-of-central-tendency"><span class="header-section-number">5.2</span> Measures of Central Tendency</h2>
+<p>Often we are interested in finding a single number that tells us something about the typical score in a distribution. <abbr title="A single number that tells us something about a typical score in a distribution." style="font-weight: bold; text-decoration: underline dotted; cursor: help;"> <em>Measures of central tendency</em> </abbr> help us find the center of our data, and examine variance around the center.</p>
+<p>Most commonly, the arithmetic <abbr title="The sum of all values divided by the number of observations." style="font-weight: bold; text-decoration: underline dotted; cursor: help;"> <em>mean</em> </abbr> (often called the <em>average</em>), is used to describe the center of a frequency distribution. A mean is calculated by dividing the sum of the observations by the number of observations (Kranzler, 2017).</p>
+<p>This is represented by the equation:</p>
+<p><span class="math display">\[
+\bar{x} = \frac{\sum x}{n}
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(\bar{x}\)</span> is the mean,</li>
+<li><span class="math inline">\(\sum x\)</span> is the sum of all observed values, and</li>
+<li><span class="math inline">\(n\)</span> is the number of observations in the sample.</li>
+</ul>
+<p>Another way to describe the center of a distribution is the <abbr title="The middle value when observations are ordered from least to greatest." style="font-weight: bold; text-decoration: underline dotted; cursor: help;"> <em>median,</em> </abbr> which is the score that falls exactly in the middle of the distribution when all scores are listed in order, least to greatest. The median divides the distribution into two equal halves.</p>
+<p><strong>Step 1:</strong> Start with the raw (unordered) values</p>
+<p>8  2  12  6  10  4  14</p>
+<p><strong>Step 2:</strong> Order the values from least to greatest</p>
+<p>2  4  6  <strong>8</strong>  10  12  14</p>
+<p>The median is the middle value (8).</p>
+<p>If there are an even number of cases, there will be two numbers at the midpoint of the ordered distribution. In this case, the median is calculated by finding the mean of the two middle values.</p>
+<p><strong>Ordered values:</strong></p>
+<p>2  4  <strong>6  8</strong>  10  12</p>
+<p>The median is the average of the two middle values: (6 + 8) / 2 = 7.</p>
+<p>Finally, the <abbr title="The most frequently occurring value." style="font-weight: bold; text-decoration: underline dotted; cursor: help;"> <em>mode</em> </abbr> is the score that occurs most frequently in the distribution. It is an indicator of the most common outcome on a particular variable.</p>
+<p>Let’s return to my septic tank pumping frequency example for just a minute.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"demo_data.csv"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(SEPTICPUMP)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 2
+  SEPTICPUMP     n
+       &lt;dbl&gt; &lt;int&gt;
+1          0    23
+2          1    33
+3          2    72
+4          3   181
+5         NA    14</code></pre>
+</div>
+</div>
+<p>The mode of this distribution is the value that occurs most frequently. In this case, the modal response is <code>3</code>, with <em>n</em> = 181 observations.</p>
+<p>According to the codebook, a value of <code>3</code> corresponds to a septic tank pumping frequency of <em>every 3–5 years</em>. This means that the most common pumping practice reported by respondents is pumping their septic tank every 3–5 years.</p>
+<p>How, then, do you decide which measure of central tendency to report? So glad you asked. Before choosing how to summarize a variable, we need to consider what kind of information that variable contains.</p>
+<p>Some variables represent quantities that can be meaningfully added, averaged, or compared using arithmetic. For example, quiz scores, age, or number of acres farmed are numeric values, and it makes sense to calculate an average for them.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_acres =</span> <span class="fu">mean</span>(SIZE, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  mean_acres
+       &lt;dbl&gt;
+1       76.2</code></pre>
+</div>
+</div>
+<p>Because <code>SIZE</code> represents the number of acres farmed, the mean can provide a meaningful summary of the center of this distribution. The summary statistics above tell me that the average farm size in this dataset is 76.2 acres.</p>
+<p>However, when a numeric variable is highly skewed, the mean can be pulled toward extreme values. It may therefore be helpful to compare the mean and median.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_acres =</span> <span class="fu">mean</span>(SIZE, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_acres =</span> <span class="fu">median</span>(SIZE, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 2
+  mean_acres median_acres
+       &lt;dbl&gt;        &lt;dbl&gt;
+1       76.2           10</code></pre>
+</div>
+</div>
+<p>In this example, the mean is much larger than the median, indicating a right-skewed distribution. A small number of large farms pull the mean upward, while the median reflects the typical farm size more accurately.</p>
+<p>Other variables use numbers simply as category labels rather than true quantities. Some of these categorical variables have a natural order, such as responses that range from “strongly disagree” to “strongly agree,” while others have no meaningful ranking – such as race, neighborhood, or property type. Whether a variable represents a quantity, an ordered set of responses, or an unordered set of labels determines how it should be summarized.</p>
+<p>The variable <code>TYPE</code> represents the type of property a landowner owns and is coded <code>1 = residential</code>, <code>2 = small farm</code>, and <code>3 = large farm</code>. These categories are coded numerically but the values function as mere labels, not quantities, and they have no logical order. For variables consisting of unordered categories like this, the most appropriate measure of center is the mode, which identifies the most common response.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(TYPE)) <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(TYPE) <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(n))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+   TYPE     n
+  &lt;dbl&gt; &lt;int&gt;
+1     1   165
+2     2    99
+3     3    47</code></pre>
+</div>
+</div>
+<p>In this case, the modal category is <code>1</code>, corresponding to residential properties, indicating that this is the most common property type reported by respondents. Because <code>TYPE</code> is a nominal variable, the mean or median would not provide a meaningful summary of the center.</p>
+<p>In sum, here are a few rules of thumb to follow when deciding which measure of central tendency to report:</p>
+<ul>
+<li>If the variable represents a numeric quantity (where averaging makes sense), report the mean value.</li>
+<li>If the distribution of a numeric quantity is highly skewed, report the median value instead.</li>
+<li>If the variable consists of ordered response options, report the median value.</li>
+<li>If the variable consists of unordered labels, report the most common response (the mode).</li>
+</ul>
+</section>
+<section id="assessing-variation-in-responses" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="assessing-variation-in-responses"><span class="header-section-number">5.3</span> Assessing Variation in Responses</h2>
+<p>Along with being able to describe a typical value, we need to know something about the <abbr title="The dispersion, or spread, of scores around the central value in a distribution." style="font-weight: bold; text-decoration: underline dotted; cursor: help;"> <em>variation</em> </abbr> of the distribution, or the spread of scores around that typical value.</p>
+<p>Box plots are helpful for visualizing both the center and spread of numeric variables, such as the variable <code>TIMERES</code> representing the number of years a respondent has lived in the watershed.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">y =</span> TIMERES)) <span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"lightgray"</span>) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Length of Residence in Watershed"</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Years"</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chapter5_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>A boxplot summarizes the distribution by showing its center, spread, and potential outliers.</p>
+<ul>
+<li>The line inside the box represents the median, indicating that a typical respondent has lived in the watershed for about 25 years.</li>
+<li>The bottom and top of the box mark the first and third quartiles, showing that the middle 50% of respondents have lived in the watershed for roughly 10 to 40 years.</li>
+<li>The “whiskers” extend to values near the minimum and maximum, illustrating the overall spread of the distribution - from new arrivals to someone who has lived in the watershed for more than 80 years.</li>
+<li>Points beyond the whiskers (if present) represent unusually high or low values.</li>
+</ul>
+<p>The height of the box and the length of the whiskers give a visual sense of variation: taller boxes and longer whiskers indicate greater spread in the data.</p>
+<p>In addition to this visual summary, we often want numeric measures that describe variation more precisely.</p>
+<p>A simple way to describe variation is the <abbr title="The distance between the minimum and maximum values in a dataset." style="font-weight: bold; text-decoration: underline dotted; cursor: help;"> <em>range,</em> </abbr> which refers to the difference between the greatest and smallest values in the distribution.</p>
+<p>Another important measure of variability is the <abbr title="Describes the typical distance between individual values and the mean." style="font-weight: bold; text-decoration: underline dotted; cursor: help;"> <em>standard deviation,</em> </abbr> which is a measure of how far a value in a set of scores deviates from the mean.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">n     =</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(TIMERES)),</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">min   =</span> <span class="fu">min</span>(TIMERES, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">max   =</span> <span class="fu">max</span>(TIMERES, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">range =</span> <span class="fu">max</span>(TIMERES, <span class="at">na.rm =</span> <span class="cn">TRUE</span>) <span class="sc">-</span> <span class="fu">min</span>(TIMERES, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd    =</span> <span class="fu">sd</span>(TIMERES, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"N"</span>, <span class="st">"Minimum"</span>, <span class="st">"Maximum"</span>, <span class="st">"Range"</span>, <span class="st">"Standard Deviation"</span>),</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Summary Statistics for Length of Residence in the Watershed"</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Summary Statistics for Length of Residence in the Watershed</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">N</th>
+<th style="text-align: right;">Minimum</th>
+<th style="text-align: right;">Maximum</th>
+<th style="text-align: right;">Range</th>
+<th style="text-align: right;">Standard Deviation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">317</td>
+<td style="text-align: right;">0.5</td>
+<td style="text-align: right;">82</td>
+<td style="text-align: right;">81.5</td>
+<td style="text-align: right;">17.15762</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>These statistics quantify what the boxplot shows visually - the range captures the full spread of the data (the difference between the minimum and maximum values), while the standard deviartion summarizes the typical spread around the mean.</p>
+<p>If the frequency distribution is bell-shaped:</p>
+<ul>
+<li>Approximately 68% of scores will fall within one standard deviation (positive or negative) of the mean.</li>
+<li>Approximately 95% of scores will fall within two standard deviations of the mean.</li>
+<li>Nearly all scores (99.7%) will fall within three standard deviations of the mean.</li>
+</ul>
+<p>The important thing to remember about standard deviations is what they tell us about the shape of the distribution. If the data are clustered around the mean, the standard deviation will be lower, resulting in a curve that is tall and narrow. If the data are dispersed, or spread out, the standard deviation will be higher, producing a curve that is short and wide.</p>
+</section>
+<section id="categorical-distributions" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="categorical-distributions"><span class="header-section-number">5.4</span> Categorical Distributions</h2>
+<p>For categorical variables, describing variation in the same way we do for numeric data is not meaningful. Instead, our goal is to understand how responses are distributed across categories.</p>
+<p>While the <code>count()</code> function is useful for an initial scan of our data - allowing us to quickly see how many responses fall into each category - examining the proportion of responses provides a clearer picture of the relative contribution of each category to the whole. To improve readability, response codes are converted from integers to labeled factors so that category names, rather than numeric codes, appear in the output.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">SEPTICPUMP =</span> <span class="fu">factor</span>(</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>      SEPTICPUMP,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Never"</span>, <span class="st">"More than 10 years"</span>, <span class="st">"6–10 years"</span>, <span class="st">"3–5 years"</span>)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(SEPTICPUMP)) <span class="sc">%&gt;%</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(SEPTICPUMP) <span class="sc">%&gt;%</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">percent =</span> <span class="fu">round</span>(<span class="dv">100</span> <span class="sc">*</span> n <span class="sc">/</span> <span class="fu">sum</span>(n), <span class="dv">1</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">bind_rows</span>(</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">summarise</span>(</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>      .,</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>      <span class="at">SEPTICPUMP =</span> <span class="st">"Total"</span>,</span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>      <span class="at">n =</span> <span class="fu">sum</span>(n),</span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>      <span class="at">percent =</span> <span class="dv">100</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Septic Tank Pumping Frequency"</span>, <span class="st">"Count"</span>, <span class="st">"Percent"</span>),</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Distribution of Septic Tank Pumping Frequency"</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Distribution of Septic Tank Pumping Frequency</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Septic Tank Pumping Frequency</th>
+<th style="text-align: right;">Count</th>
+<th style="text-align: right;">Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Never</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">7.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">More than 10 years</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: right;">10.7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">6–10 years</td>
+<td style="text-align: right;">72</td>
+<td style="text-align: right;">23.3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">3–5 years</td>
+<td style="text-align: right;">181</td>
+<td style="text-align: right;">58.6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Total</td>
+<td style="text-align: right;">309</td>
+<td style="text-align: right;">100.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>In the output, you can see:</p>
+<ul>
+<li>Each response category for the variable, listed in the first column.</li>
+<li>The count of respondents who selected each category.</li>
+<li>The percent of valid responses each category represents (missing values excluded).</li>
+<li>A total row summarizing the total number of valid responses and confirming that percentages sum to 100%.</li>
+</ul>
+<p>In my <code>SEPTICPUMP</code> example, 58.6% (<em>n</em> = 181) of respondents reported pumping their septic tank every 3-5 years, making this by far the most common maintenance interval. About 23.3% (<em>n</em> = 72) reported pumping every 6-10 years, while 10.7% (<em>n</em> = 33) haven’t had their tank pumped in over 10 years. Only 7.4% of respondents (<em>n</em> = 23) said they have never had their tank pumped. An additional 14 respondents (about 4% of the full sample) did not report a pumping frequency.</p>
+<p>Rather than describing septic tank pumping for the entire sample, we may be interested in examining how this practice varies across different types of properties. A 100% stacked bar chart allows us to compare the proportion of responses within each group, making differences across categories easier to see.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(SEPTICPUMP), <span class="sc">!</span><span class="fu">is.na</span>(TYPE)) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">SEPTICPUMP =</span> <span class="fu">factor</span>(SEPTICPUMP,</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Never"</span>, <span class="st">"More than 10 years"</span>, <span class="st">"6–10 years"</span>, <span class="st">"3–5 years"</span>)),</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">TYPE =</span> <span class="fu">factor</span>(TYPE,</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">levels =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>),</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Residential"</span>, <span class="st">"Small farm"</span>, <span class="st">"Large farm"</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> TYPE, <span class="at">fill =</span> SEPTICPUMP)) <span class="sc">+</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_grey</span>(<span class="at">start =</span> <span class="fl">0.85</span>, <span class="at">end =</span> <span class="fl">0.25</span>) <span class="sc">+</span></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">percent_format</span>()) <span class="sc">+</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Property type"</span>,</span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Percent of respondents"</span>,</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">fill =</span> <span class="st">"Septic tank pumping frequency"</span></span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="chapter5_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>In the plot above, I can see that residential property owners were slightly more likely to report pumping their septic tank at the recommended 3-5-year interval compared to farm property owners.Large farms were more likely to report that their last pump-out was more than 10 years ago than were small farms, but they were also slightly less likely to report that they have never pumped their septic tank than both residential and small farm owners.</p>
+<p>While it is informative to assess these distributions visually, this plot also raises new questions. Are such apparently slight differences in practice among property owners really meaningful? At what point are these differences great enough to merit making specific management or outreach recommendations to distinct groups? These are the questions we’ll turn to next as we tackle hypothesis testing and statistical significance.</p>
+</section>
+<section id="summary" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="summary"><span class="header-section-number">5.5</span> Summary</h2>
+<p>Describing survey data is a foundational step in any research or analytic workflow. Before testing hypotheses or making comparisons across groups, we must first understand what our data look like: how values are distributed, where typical responses fall, and how much variation exists across observations. Descriptive statistics and visualizations provide the tools needed to develop this familiarity with the data.</p>
+<p>This chapter emphasized the importance of aligning analytic choices with the structure of the variables in an analysis. Decisions about whether to report a mean, median, or mode, and how to visualize a distribution, depend on whether a variable represents a true quantity, an ordered set of responses, or unordered categories. Understanding these distinctions helps ensure that summaries are meaningful and interpretable.</p>
+<p>Importantly, descriptive analysis does more than summarize data; it generates new questions. Patterns observed in tables and graphs may point to unexpected features or group differences that merit closer attention. At this stage, it often makes sense to pause, take inventory, and refine research questions as needed to integrate new observations and insights before moving on to more advanced analyses.</p>
+</section>
+<section id="reflection-questions" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="reflection-questions"><span class="header-section-number">5.6</span> Reflection Questions</h2>
+<ol type="1">
+<li><p><strong>Researchers must choose summary statistics that align with how a variable is measured.</strong> What problems can arise if a mean is reported for a variable that represents unordered categories rather than numeric quantities?</p></li>
+<li><p><strong>Two datasets can have the same average but very different distributions.</strong> Why is it important to examine measures of variation and visualizations in addition to measures of central tendency?</p></li>
+<li><p><strong>Categorical tables often report both counts and percentages.</strong> In what situations might percentages be misleading if the underlying number of observations is small?</p></li>
+<li><p><strong>Visualizations are used in this chapter to summarize how responses are distributed across values or categories.</strong> What information did you learn from a graph that was harder to see in a table, or vice versa?</p></li>
+<li><p><strong>Descriptive analysis often raises new questions rather than providing final answers.</strong> How can patterns observed at this stage help researchers refine, narrow, or clarify their research questions?</p></li>
+</ol>
+</section>
+<section id="references" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="references"><span class="header-section-number">5.7</span> References</h2>
+<div class="references">
+<ul>
+<li>Arthur, M. M. L., &amp; Clark, R. (2021). Social Data Analysis: Qualitative and Quantitative Approaches. Open Educational Resource.<a href="https://pressbooks.ric.edu/socialdataanalysis/" class="uri">https://pressbooks.ric.edu/socialdataanalysis/</a>.</li>
+<li>Çetinkaya-Rundel, M. and Hardin, J. (2024). Introduction to Modern Statistics, 2e. OpenIntro. CC-SA 3.0 <a href="https://openintro-ims.netlify.app/" class="uri">https://openintro-ims.netlify.app/</a>.</li>
+<li>Dillman, D. A., Smyth, J. D., &amp; Christian, L. M. (2014). Internet, Phone, Mail, and Mixed-Mode Surveys: The Tailored Design Method (4th ed.). John Wiley &amp; Sons.</li>
+<li>Gomes, G.G. (2021). Descriptive statistics: Expectations vs.&nbsp;reality (exploratory data analysis - EDA). Towards Data Science. <a href="https://towardsdatascience.com/descriptive-statistics-expectations-vs-reality-exploratory-data-analysis-eda-8336b1d0c60b/" class="uri">https://towardsdatascience.com/descriptive-statistics-expectations-vs-reality-exploratory-data-analysis-eda-8336b1d0c60b/</a>.</li>
+<li>Kranzler, J.H. (2017). Statistics for the Terrified (6th ed.). Roman &amp; Littlefield.</li>
+<li>Saylor Academy. (2012). Principles of Sociological Inquiry: Qualitative and Quantitative Methods. CC-BY-NC-SA 4.0 <a href="https://saylordotorg.github.io/text_principles-of-sociological-inquiry-qualitative-and-quantitative-methods/index.html" class="uri">https://saylordotorg.github.io/text_principles-of-sociological-inquiry-qualitative-and-quantitative-methods/index.html</a>.</li>
+<li>Sheppard, V. (2020). Research Methods for the Social Sciences: An Introduction. Pressbooks. CC-BY-NC-SA 4.0. <a href="https://pressbooks.bccampus.ca/jibcresearchmethods/" class="uri">https://pressbooks.bccampus.ca/jibcresearchmethods/</a>.</li>
+</ul>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./chapter4.html" class="pagination-link" aria-label="From Data To Statistics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">From Data To Statistics</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./chapter6.html" class="pagination-link" aria-label="Exploring Relationships">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Exploring Relationships</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
